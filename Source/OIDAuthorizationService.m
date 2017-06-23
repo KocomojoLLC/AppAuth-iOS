@@ -105,9 +105,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (BOOL)resumeAuthorizationFlowWithURL:(NSURL *)URL {
   // rejects URLs that don't match redirect (these may be completely unrelated to the authorization)
-  if (![self shouldHandleURL:URL]) {
+  /*if (![self shouldHandleURL:URL]) {
     return NO;
-  }
+  }*/
+  
   // checks for an invalid state
   if (!_pendingauthorizationFlowCallback) {
     [NSException raise:OIDOAuthExceptionInvalidAuthorizationFlow
